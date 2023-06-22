@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectBook.Models
+namespace Project.Models
 {
     public class Product
     {

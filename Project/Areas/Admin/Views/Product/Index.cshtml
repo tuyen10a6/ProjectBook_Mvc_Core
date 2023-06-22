@@ -28,14 +28,35 @@
             <thead>
                 <tr>
                     <th>
-                        Product Name
+                        Title
                     </th>
                     <th>
-                        DisPlay Order
+                      Description
+                    </th>
+                    <th>
+                       IBSN
+                    </th>
+                    <th>
+                       Author
+                    </th>
+                    <th>
+                        Category
                     </th>
                     <th>
 
                     </th>
+                   @* <th>
+                       ListPrice
+                    </th>*@
+                  @*  <th>
+                       Price
+                    </th>*@
+                   @* <th>
+                       Price50
+                    </th>
+                    <th>
+                       Price100
+                    </th>*@
                 </tr>
             </thead>
             <tbody>
@@ -43,14 +64,32 @@
                 {
                     <tr>
                         <td>
-                            @obj.Name
+                            @obj.Title
                         </td>
                         <td>
-                            @obj.DisplayOrder
+                            @obj.Description
                         </td>
-
                         <td>
-                            <div class=" role="group">
+                            @obj.ISBN
+                        </td>
+                       <td>
+                            @obj.Author
+                        </td>
+                        @* <td>
+                            @obj.ListPrice
+                        </td>
+                        <td>
+                            @obj.Price
+                        </td>
+                        <td>
+                            @obj.Price50
+                        </td>
+                        <td>
+                            @obj.Price100
+                        </td>*@
+                        <td></td>
+                        <td>
+                            <div class="w-75 btn-group" role="group">
                                 <a asp-controller="Product" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2 w-25">
                                     <i class="bi bi-pencil-square"> </i> Edit
                                 </a> 
