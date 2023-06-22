@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Project.DataAccess.Data;
 using Project.DataAccess.Repository.IRepository;
 using Project.Models;
 using ProjectBook.DataAccess.Repository.IRepository;
-
+using ProjectBook.Models.ViewModels;
+using System.Collections.Generic;
 
 namespace ProjectBookWeb.Areas.Admin.Controllers
 {
@@ -21,10 +21,21 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
         public IActionResult Index()
         {
             List<Product> objProductList = _unitOfWork.Product.GetAll().ToList();
+            
             return View(objProductList);
         }
         public IActionResult Create()
         {
+            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString()
+
+            });
+            //ViewBag.CategoryList = CategoryList;    
+            ViewData["CategoryList"] = CategoryList;
+            ProductVM productVM = new ProductVM();
+
             return View();
         }
         public IActionResult Edit(int? id)
