@@ -1,0 +1,12 @@
+E:\.NET\MVC\Project.Utility\bin\Debug\net6.0\Project.Utility.deps.json
+E:\.NET\MVC\Project.Utility\bin\Debug\net6.0\Project.Utility.dll
+E:\.NET\MVC\Project.Utility\bin\Debug\net6.0\Project.Utility.pdb
+E:\.NET\MVC\Project.Utility\obj\Debug\net6.0\Project.Utility.csproj.AssemblyReference.cache
+E:\.NET\MVC\Project.Utility\obj\Debug\net6.0\Project.Utility.GeneratedMSBuildEditorConfig.editorconfig
+E:\.NET\MVC\Project.Utility\obj\Debug\net6.0\Project.Utility.AssemblyInfoInputs.cache
+E:\.NET\MVC\Project.Utility\obj\Debug\net6.0\Project.Utility.AssemblyInfo.cs
+E:\.NET\MVC\Project.Utility\obj\Debug\net6.0\Project.Utility.csproj.CoreCompileInputs.cache
+E:\.NET\MVC\Project.Utility\obj\Debug\net6.0\Project.Utility.dll
+E:\.NET\MVC\Project.Utility\obj\Debug\net6.0\refint\Project.Utility.dll
+E:\.NET\MVC\Project.Utility\obj\Debug\net6.0\Project.Utility.pdb
+E:\.NET\MVC\Project.Utility\obj\Debug\net6.0\ref\Project.Utility.dll

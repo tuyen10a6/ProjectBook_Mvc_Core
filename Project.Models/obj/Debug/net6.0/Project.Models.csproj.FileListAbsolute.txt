@@ -1,0 +1,12 @@
+E:\.NET\MVC\Project.Models\bin\Debug\net6.0\Project.Models.deps.json
+E:\.NET\MVC\Project.Models\bin\Debug\net6.0\Project.Models.dll
+E:\.NET\MVC\Project.Models\bin\Debug\net6.0\Project.Models.pdb
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\Project.Models.csproj.AssemblyReference.cache
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\Project.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\Project.Models.AssemblyInfoInputs.cache
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\Project.Models.AssemblyInfo.cs
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\Project.Models.csproj.CoreCompileInputs.cache
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\Project.Models.dll
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\refint\Project.Models.dll
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\Project.Models.pdb
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\ref\Project.Models.dll
