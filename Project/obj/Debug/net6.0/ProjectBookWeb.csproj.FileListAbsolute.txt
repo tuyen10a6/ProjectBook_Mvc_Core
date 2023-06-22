@@ -1,0 +1,8 @@
+E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.csproj.AssemblyReference.cache
+E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.GeneratedMSBuildEditorConfig.editorconfig
+E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.AssemblyInfoInputs.cache
+E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.AssemblyInfo.cs
+E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.csproj.CoreCompileInputs.cache
+E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.MvcApplicationPartsAssemblyInfo.cache
+E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.RazorAssemblyInfo.cache
+E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.RazorAssemblyInfo.cs
