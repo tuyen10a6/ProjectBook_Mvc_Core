@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
-namespace ProjectBook.Models.ViewModels
+namespace Project.Models.ViewModels
 {
     public class ProductVM
     {
-        public Product product { get; set; }
+        public Product Product { get; set; }
+        [ValidateNever]
         public IEnumerable<SelectListItem> Categorylist { get; set; }
     }
 }

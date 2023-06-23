@@ -5,7 +5,7 @@ using Project.DataAccess.Data;
 using Project.DataAccess.Repository.IRepository;
 using Project.Models;
 using ProjectBook.DataAccess.Repository.IRepository;
-using ProjectBook.Models.ViewModels;
+using Project.Models.ViewModels;
 using System.Collections.Generic;
 
 namespace ProjectBookWeb.Areas.Admin.Controllers
@@ -14,60 +14,117 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        public ProductController(IUnitOfWork unitOfWork)
+        private readonly IWebHostEnvironment _webHostEnvironment;               
+        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = unitOfWork;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
             List<Product> objProductList = _unitOfWork.Product.GetAll().ToList();
-            
+
             return View(objProductList);
         }
-        public IActionResult Create()
+        public IActionResult UpSert(int? id)
         {
-            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+            ProductVM productVM = new()
             {
-                Text = u.Name,
-                Value = u.Id.ToString()
+                Categorylist = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
 
-            });
-            //ViewBag.CategoryList = CategoryList;    
-            ViewData["CategoryList"] = CategoryList;
-            ProductVM productVM = new ProductVM();
+                }),
+                Product = new Product()
 
-            return View();
-        }
-        public IActionResult Edit(int? id)
-        {
-            if (id == null || id == 0)
+            }; 
+            if(id == null || id == 0)
             {
-                return NotFound();
+                // create
+                return View(productVM);
             }
-            Product? productFromDb = _unitOfWork.Product.Get(u => u.Id == id);
-            //Product? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
-
-            if (productFromDb == null)
+            else
             {
-                return NotFound();
+                // update
+                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id);
+                return View(productVM);
             }
-            return View(productFromDb);
+
+          
         }
 
-        // Action Update Product
         [HttpPost]
-        public IActionResult Edit(Product obj)
+        public IActionResult UpSert(ProductVM productVM, IFormFile? file)
         {
+
             if (ModelState.IsValid)
             {
-                _unitOfWork.Product.Update(obj);
+                string wwwrootPath = _webHostEnvironment.WebRootPath;
+                if(file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    string productPath = Path.Combine(wwwrootPath, @"images\product");
+                    using (var fileStream = new FileStream(Path.Combine(productPath,fileName),FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    productVM.Product.ImageUrl = @"\images\product\" + fileName;
+                }
+                _unitOfWork.Product.Add(productVM.Product);
                 _unitOfWork.Product.Save();
-                TempData["success"] = "Product update successfully";
-                var ok = "Index";
-                return RedirectToAction(ok);
+                TempData["success"] = "Thêm sản phẩm thành công";
+                return RedirectToAction("Index");
+
             }
-            return View();
+            else
+            {
+                productVM.Categorylist = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+
+                });
+                    
+                return View(productVM);
+            }    
+           
         }
+
+
+      
+
+
+        //public IActionResult Edit(int? id)
+        //{
+        //    if (id == null || id == 0)
+        //    {
+        //        return NotFound();
+        //    }
+        //    Product? productFromDb = _unitOfWork.Product.Get(u => u.Id == id);
+        //    //Product? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
+
+        //    if (productFromDb == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(productFromDb);
+        //}
+
+        //// Action Update Product
+        //[HttpPost]
+        //public IActionResult Edit(Product obj)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _unitOfWork.Product.Update(obj);
+        //        _unitOfWork.Product.Save();
+        //        TempData["success"] = "Cập nhật sản phẩm thành công";
+        //        var ok = "Index";
+        //        return RedirectToAction(ok);
+        //    }
+        //    return View();
+        //}
         // Delete
         public IActionResult Delete(int? id)
         {
@@ -98,26 +155,13 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
             {
                 _unitOfWork.Product.Delete(obj);
                 _unitOfWork.Product.Save();
-                TempData["success"] = "Xóa danh mục thành công";
+                TempData["success"] = "Xóa sản phẩm thành công";
                 var ok = "Index";
                 return RedirectToAction(ok);
             }
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Create(Product obj)
-        {
-           
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.Product.Add(obj);
-                _unitOfWork.Product.Save();
-                TempData["success"] = "Thêm sản phẩm thành công";
-                return RedirectToAction("Index");
-
-            }
 
             return View();
         }
+       
     }
 }

@@ -10,3 +10,5 @@ E:\.NET\MVC\Project.Models\obj\Debug\net6.0\ProjectBook.Models.dll
 E:\.NET\MVC\Project.Models\obj\Debug\net6.0\refint\ProjectBook.Models.dll
 E:\.NET\MVC\Project.Models\obj\Debug\net6.0\ProjectBook.Models.pdb
 E:\.NET\MVC\Project.Models\obj\Debug\net6.0\ref\ProjectBook.Models.dll
+E:\.NET\MVC\Project.Models\bin\Debug\net6.0\ProjectBook.Models.runtimeconfig.json
+E:\.NET\MVC\Project.Models\obj\Debug\net6.0\ProjectBook.Models.genruntimeconfig.cache

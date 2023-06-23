@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "V1BLY1RGn40LzkJ1h1V1uYorQB5YX46ga0dWMTvjDn8=",
+  "Hash": "QNuCxE5Slw4h3q4eT70xsk06W22JxA+cN1IdZ57XBJM=",
   "Source": "ProjectBookWeb",
   "BasePath": "_content/ProjectBookWeb",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\5766a728-4754-415a-8766-61322652676f.jpg",
+      "SourceId": "ProjectBookWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\.NET\\MVC\\Project\\wwwroot\\",
+      "BasePath": "_content/ProjectBookWeb",
+      "RelativePath": "images/product/5766a728-4754-415a-8766-61322652676f.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\5766a728-4754-415a-8766-61322652676f.jpg"
+    },
+    {
+      "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\ede08bf0-c7d6-4cd7-8314-f732dfedd080.jpg",
+      "SourceId": "ProjectBookWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\.NET\\MVC\\Project\\wwwroot\\",
+      "BasePath": "_content/ProjectBookWeb",
+      "RelativePath": "images/product/ede08bf0-c7d6-4cd7-8314-f732dfedd080.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\ede08bf0-c7d6-4cd7-8314-f732dfedd080.jpg"
     },
     {
       "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\js\\site.js",
