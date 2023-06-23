@@ -191,7 +191,7 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
         }
         #endregion
 
-        //[HttpDelete]
+        [HttpDelete]
         public IActionResult Delete(int? id)
         {
             var productToBeDeleted = _unitOfWork.Product.Get(u => u.Id == id);

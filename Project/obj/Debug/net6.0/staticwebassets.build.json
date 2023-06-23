@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X0+lbwUzwUKrd2asQtSn0vBMjE/u1CliYoMnP9/8C3I=",
+  "Hash": "9S8OOnno9MV2A01KTNNsJ2vNsmgGKgvpgeJwE3+OOP8=",
   "Source": "ProjectBookWeb",
   "BasePath": "_content/ProjectBookWeb",
   "Mode": "Default",
@@ -85,23 +85,6 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\35620312-3ede-4a61-96c8-cb74f09ea2eb.jpg",
-      "SourceId": "ProjectBookWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\.NET\\MVC\\Project\\wwwroot\\",
-      "BasePath": "_content/ProjectBookWeb",
-      "RelativePath": "images/product/35620312-3ede-4a61-96c8-cb74f09ea2eb.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\product\\35620312-3ede-4a61-96c8-cb74f09ea2eb.jpg"
-    },
-    {
       "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\5766a728-4754-415a-8766-61322652676f.jpg",
       "SourceId": "ProjectBookWeb",
       "SourceType": "Discovered",
@@ -119,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\5766a728-4754-415a-8766-61322652676f.jpg"
     },
     {
-      "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\ef2e2ca4-2f5b-4726-8693-15da44e71d34.jpg",
+      "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\f36c83d4-bf0d-4313-ab58-9161b3df211c.jpg",
       "SourceId": "ProjectBookWeb",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\.NET\\MVC\\Project\\wwwroot\\",
       "BasePath": "_content/ProjectBookWeb",
-      "RelativePath": "images/product/ef2e2ca4-2f5b-4726-8693-15da44e71d34.jpg",
+      "RelativePath": "images/product/f36c83d4-bf0d-4313-ab58-9161b3df211c.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,7 +116,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\product\\ef2e2ca4-2f5b-4726-8693-15da44e71d34.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\product\\f36c83d4-bf0d-4313-ab58-9161b3df211c.jpg"
     },
     {
       "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\f7c6e29d-a75e-4f9c-a716-2229a4443926.jpg",
