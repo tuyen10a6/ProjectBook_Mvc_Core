@@ -144,42 +144,42 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
         //    return View();
         //}
         // Delete
-        public IActionResult Delete(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-            Product? categoryFromDb = _unitOfWork.Product.Get(c => c.Id == id);
-            //Product? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
+        //public IActionResult Delete(int? id)
+        //{
+        //    if (id == null || id == 0)
+        //    {
+        //        return NotFound();
+        //    }
+        //    Product? categoryFromDb = _unitOfWork.Product.Get(c => c.Id == id);
+        //    //Product? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
 
-            if (categoryFromDb == null)
-            {
-                return NotFound();
-            }
-            return View(categoryFromDb);
-        }
+        //    if (categoryFromDb == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(categoryFromDb);
+        //}
 
         // Action Update Product
-        [HttpPost, ActionName("Delete")]
-        public IActionResult DeletePost(int? id)
-        {
-            Product? obj = _unitOfWork.Product.Get(u => u.Id == id);
-            if (obj == null)
-            {
-                return NotFound();
-            }
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.Product.Delete(obj);
-                _unitOfWork.Product.Save();
-                TempData["success"] = "Xóa sản phẩm thành công";
-                var ok = "Index";
-                return RedirectToAction(ok);
-            }
+        //[HttpPost, ActionName("Delete")]
+        //public IActionResult DeletePost(int? id)
+        //{
+        //    Product? obj = _unitOfWork.Product.Get(u => u.Id == id);
+        //    if (obj == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    if (ModelState.IsValid)
+        //    {
+        //        _unitOfWork.Product.Delete(obj);
+        //        _unitOfWork.Product.Save();
+        //        TempData["success"] = "Xóa sản phẩm thành công";
+        //        var ok = "Index";
+        //        return RedirectToAction(ok);
+        //    }
 
-            return View();
-        }
+        //    return View();
+        //}
         #region APICALL
         [HttpGet]
         public IActionResult GetAll()
@@ -190,6 +190,31 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
 
         }
         #endregion
+
+        //[HttpDelete]
+        public IActionResult Delete(int? id)
+        {
+            var productToBeDeleted = _unitOfWork.Product.Get(u => u.Id == id);
+            if (productToBeDeleted == null)
+            {
+                return Json(new { success = false, message = "Error while deleting" });
+            }
+
+            var oldImagePath =
+                           Path.Combine(_webHostEnvironment.WebRootPath,
+                           productToBeDeleted.ImageUrl.TrimStart('\\'));
+
+            if (System.IO.File.Exists(oldImagePath))
+            {
+                System.IO.File.Delete(oldImagePath);
+            }
+
+            _unitOfWork.Product.Delete(productToBeDeleted);
+            _unitOfWork.Save();
+
+            return Json(new { success = true, message = "Delete Successful" });
+        }
+
 
     }
 }
