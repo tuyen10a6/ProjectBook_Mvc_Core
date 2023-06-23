@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rPAEf8Z8zq5N61D6nIVlX5NGqlw+Y9WkTGGAC38XbvI=",
+  "Hash": "y0hriXTSJT8smwNSQHlu69cf+ZlUqc5TMRZYBnOKahg=",
   "Source": "ProjectBookWeb",
   "BasePath": "_content/ProjectBookWeb",
   "Mode": "Default",
@@ -119,23 +119,6 @@
       "OriginalItemSpec": "wwwroot\\images\\product\\5766a728-4754-415a-8766-61322652676f.jpg"
     },
     {
-      "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\8a3a51fd-29e1-4f23-991a-456b3a259b89.jpg",
-      "SourceId": "ProjectBookWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\.NET\\MVC\\Project\\wwwroot\\",
-      "BasePath": "_content/ProjectBookWeb",
-      "RelativePath": "images/product/8a3a51fd-29e1-4f23-991a-456b3a259b89.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\product\\8a3a51fd-29e1-4f23-991a-456b3a259b89.jpg"
-    },
-    {
       "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\a8e8612a-47f5-49ba-90e1-3e067122aee1.jpg",
       "SourceId": "ProjectBookWeb",
       "SourceType": "Discovered",
@@ -151,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product\\a8e8612a-47f5-49ba-90e1-3e067122aee1.jpg"
+    },
+    {
+      "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\f7c6e29d-a75e-4f9c-a716-2229a4443926.jpg",
+      "SourceId": "ProjectBookWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\.NET\\MVC\\Project\\wwwroot\\",
+      "BasePath": "_content/ProjectBookWeb",
+      "RelativePath": "images/product/f7c6e29d-a75e-4f9c-a716-2229a4443926.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\f7c6e29d-a75e-4f9c-a716-2229a4443926.jpg"
     },
     {
       "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\js\\site.js",
