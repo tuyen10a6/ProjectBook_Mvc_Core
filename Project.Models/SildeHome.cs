@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Project.Models
 {
@@ -12,7 +13,7 @@ namespace Project.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [ValidateNever]
         public string LinkImage { get; set; }
   
     }

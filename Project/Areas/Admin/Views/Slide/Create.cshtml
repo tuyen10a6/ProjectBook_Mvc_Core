@@ -1,0 +1,118 @@
+﻿@model SildeVM
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">
+                    @(Model.sildeHome.Id != 0 ? "Update" : "Create") Product
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" class="row" enctype="multipart/form-data">
+            <input asp-for="sildeHome.Id" hidden />
+            <input asp-for="sildeHome.LinkImage" hidden />
+            <div class="row">
+                <div class="col-10">
+                    <div class="border p-3 mt-4">
+                        <div class="row pb-2">
+                        </div>
+                        
+                      
+                        @* <div class="mb-3">
+                        <label asp-for="Product.ISBN">
+
+                        </label>
+                        <input asp-for="Product.ISBN" type="text" class="form-control" />
+                        <span asp-validation-for="Product.ISBN" class="text-bg-danger"></span>
+                        </div>*@
+                        @* <div class="mb-3">
+                        <label asp-for="Product.Author">
+
+                        </label>
+                        <input asp-for="Product.Author" type="text" class="form-control" />
+                        <span asp-validation-for="Product.Author" class="text-bg-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                        <label asp-for="Product.ListPrice">
+
+                        </label>
+                        <input asp-for="Product.ListPrice" type="text" class="form-control" />
+                        <span asp-validation-for="Product.ListPrice" class="text-bg-danger"></span>
+                        </div>*@
+                       
+                        
+                        @* <div class="mb-3">
+                        <label asp-for="Product.Price100">
+
+                        </label>
+                        <input asp-for="Product.Price100" type="text" class="form-control" />
+                        <span asp-validation-for="Product.Price100" class="text-bg-danger"></span>
+                        </div>*@
+
+                       
+                        <div class="mb-3">
+                            <label asp-for="sildeHome.LinkImage">
+
+                            </label>
+                            <input type="file" name="file" asp-for="sildeHome.LinkImage" class="form-control" />
+                            @* <span asp-validation-for="Product.ImageUrl" class="text-bg-danger"></span>*@
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                @if (Model.sildeHome.Id != 0)
+                                {
+                                    <button type="submit" class="btn btn-primary" style="width:150px">
+                                        Update
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-primary" style="width:150px">
+                                        Create
+                                    </button>
+                                }
+
+                            </div>
+                            <div class="col-6">
+                                <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
+                                    Back to List
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-2">
+                    <img src="@Model.sildeHome.LinkImage" width="100%"
+                         style="border-radius: 5px; border: 1px solid #bbb9b9" />
+                </div>
+            </div>
+
+
+
+        </form>
+
+    </div>
+</div>
+@section Scripts
+    {
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
+            ]
+        });
+    </script>
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
