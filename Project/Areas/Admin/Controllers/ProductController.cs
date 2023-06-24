@@ -14,7 +14,7 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IWebHostEnvironment _webHostEnvironment;               
+        private readonly IWebHostEnvironment _webHostEnvironment;
         public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = unitOfWork;
@@ -22,7 +22,7 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties:"Category").ToList();
+            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
 
             return View(objProductList);
         }
@@ -38,8 +38,8 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
                 }),
                 Product = new Product()
 
-            }; 
-            if(id == null || id == 0)
+            };
+            if (id == null || id == 0)
             {
                 // create
                 return View(productVM);
@@ -51,7 +51,7 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
                 return View(productVM);
             }
 
-          
+
         }
 
         [HttpPost]
@@ -61,25 +61,25 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 string wwwrootPath = _webHostEnvironment.WebRootPath;
-                if(file != null)
+                if (file != null)
                 {
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
                     string productPath = Path.Combine(wwwrootPath, @"images\product");
-                    if(!string.IsNullOrEmpty(productVM.Product.ImageUrl))
+                    if (!string.IsNullOrEmpty(productVM.Product.ImageUrl))
                     {
                         var oldImagePath = Path.Combine(wwwrootPath, productVM.Product.ImageUrl.TrimStart('\\'));
-                        if(System.IO.File.Exists(oldImagePath))
+                        if (System.IO.File.Exists(oldImagePath))
                         {
                             System.IO.File.Delete(oldImagePath);
                         }
                     }
-                    using (var fileStream = new FileStream(Path.Combine(productPath,fileName),FileMode.Create))
+                    using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
                     {
                         file.CopyTo(fileStream);
                     }
                     productVM.Product.ImageUrl = @"\images\product\" + fileName;
                 }
-                if(productVM.Product.Id == 0)
+                if (productVM.Product.Id == 0)
                 {
                     _unitOfWork.Product.Add(productVM.Product);
                     TempData["success"] = "Thêm sản phẩm thành công";
@@ -91,7 +91,7 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
                     TempData["success"] = "Sửa sản phẩm thành công";
                 }
                 _unitOfWork.Product.Save();
-              
+
                 return RedirectToAction("Index");
 
             }
@@ -103,14 +103,14 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
                     Value = u.Id.ToString()
 
                 });
-                    
+
                 return View(productVM);
-            }    
-           
+            }
+
         }
 
 
-      
+
 
 
         //public IActionResult Edit(int? id)

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project.DataAccess.Data;
 
@@ -10,9 +11,11 @@ using Project.DataAccess.Data;
 namespace Project.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230624041902_AddSlideHomeToDb")]
+    partial class AddSlideHomeToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,6 +73,10 @@ namespace Project.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -77,11 +84,21 @@ namespace Project.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ISBN")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("ListPrice")
+                        .HasColumnType("float");
+
                     b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Price100")
                         .HasColumnType("float");
 
                     b.Property<double>("Price50")
@@ -96,6 +113,53 @@ namespace Project.DataAccess.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Author = "Phạm Xuân Tuyển",
+                            CategoryId = 1,
+                            Description = "Sách về cuộc sống",
+                            ISBN = "17122002",
+                            ImageUrl = "",
+                            ListPrice = 99.0,
+                            Price = 90.0,
+                            Price100 = 80.0,
+                            Price50 = 85.0,
+                            Title = "Đắc Nhân Tâm"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Author = "Phạm Xuân Tuyển",
+                            CategoryId = 2,
+                            Description = "Sách về cuộc sống",
+                            ISBN = "31032008",
+                            ImageUrl = "",
+                            ListPrice = 99.0,
+                            Price = 90.0,
+                            Price100 = 80.0,
+                            Price50 = 85.0,
+                            Title = "Cha giàu cha nghèo"
+                        });
+                });
+
+            modelBuilder.Entity("Project.Models.SildeHome", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("LinkImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SlideHomes");
                 });
 
             modelBuilder.Entity("Project.Models.Product", b =>
