@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0+DHKxqbGg2WS0lFL6wIp4kyEAM459vX/Lwmw9nvKbU=",
+  "Hash": "6eK3JzAszwsfmF5aR6pxIO7MjXSG92s7CI9lf6mLjVY=",
   "Source": "ProjectBookWeb",
   "BasePath": "_content/ProjectBookWeb",
   "Mode": "Default",
@@ -85,23 +85,6 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\4dabeab0-6ee3-444a-b240-22e62477eb5b.jpg",
-      "SourceId": "ProjectBookWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\.NET\\MVC\\Project\\wwwroot\\",
-      "BasePath": "_content/ProjectBookWeb",
-      "RelativePath": "images/product/4dabeab0-6ee3-444a-b240-22e62477eb5b.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\product\\4dabeab0-6ee3-444a-b240-22e62477eb5b.jpg"
-    },
-    {
       "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\5766a728-4754-415a-8766-61322652676f.jpg",
       "SourceId": "ProjectBookWeb",
       "SourceType": "Discovered",
@@ -151,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product\\a0b776a1-fe96-48ec-86a0-79cd9652c2f0.png"
+    },
+    {
+      "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\c077204b-eb5c-4ea7-98e8-c93844e16bf9.jpg",
+      "SourceId": "ProjectBookWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\.NET\\MVC\\Project\\wwwroot\\",
+      "BasePath": "_content/ProjectBookWeb",
+      "RelativePath": "images/product/c077204b-eb5c-4ea7-98e8-c93844e16bf9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\product\\c077204b-eb5c-4ea7-98e8-c93844e16bf9.jpg"
     },
     {
       "Identity": "E:\\.NET\\MVC\\Project\\wwwroot\\images\\product\\f36c83d4-bf0d-4313-ab58-9161b3df211c.jpg",

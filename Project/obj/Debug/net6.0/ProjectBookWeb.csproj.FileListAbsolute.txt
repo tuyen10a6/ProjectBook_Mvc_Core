@@ -269,4 +269,5 @@ E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.genruntimeconfig.cache
 E:\.NET\MVC\Project\obj\Debug\net6.0\ref\ProjectBookWeb.dll
 E:\.NET\MVC\Project\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 E:\.NET\MVC\Project\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+E:\.NET\MVC\Project\bin\Debug\net6.0\ProjectBook.DataAccess.dll.config
 E:\.NET\MVC\Project\obj\Debug\net6.0\ProjectBookWeb.MvcApplicationPartsAssemblyInfo.cs

@@ -17,3 +17,4 @@ E:\.NET\MVC\Project.DataAccess\obj\Debug\net6.0\refint\ProjectBook.DataAccess.dl
 E:\.NET\MVC\Project.DataAccess\obj\Debug\net6.0\ProjectBook.DataAccess.pdb
 E:\.NET\MVC\Project.DataAccess\obj\Debug\net6.0\ProjectBook.DataAccess.genruntimeconfig.cache
 E:\.NET\MVC\Project.DataAccess\obj\Debug\net6.0\ref\ProjectBook.DataAccess.dll
+E:\.NET\MVC\Project.DataAccess\bin\Debug\net6.0\ProjectBook.DataAccess.dll.config

@@ -1,4 +1,5 @@
 ﻿using Project.DataAccess.Repository.IRepository;
+using Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,9 @@ using System.Threading.Tasks;
 
 namespace ProjectBook.DataAccess.Repository.IRepository
 {
-    public interface IUnitOfWork
+    public interface ISlideRepository: IRepository<SildeHome>
     {
-        ICategoryRepository Category { get; }
-        IProductRepository Product { get; }
-        ISlideRepository Slide { get; }
+        void Update(SildeHome obj);
         void Save();
-
     }
 }
