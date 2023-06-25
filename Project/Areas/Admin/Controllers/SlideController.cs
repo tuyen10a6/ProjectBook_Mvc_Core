@@ -82,10 +82,20 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
                     }
                     slideVM.sildeHome.LinkImage = @"\images\slides\" + fileName;
                 }
+                // Check ID 
                 if (slideVM.sildeHome.Id == 0)
                 {
-                    _unitOfWork.Slide.Add(slideVM.sildeHome);
-                    TempData["success"] = "Thêm hình ảnh Slide thành công";
+                    // Kiểm tra số lượng Slide nếu vượt quá số lượng cho phép thì vào điều kiện else
+                   var ok =  _unitOfWork.Slide.GetAll().Count();
+                    if(ok <4)
+                    {
+                        _unitOfWork.Slide.Add(slideVM.sildeHome);
+                        TempData["success"] = "Thêm hình ảnh Slide thành công";
+                    }else
+                    {
+                        TempData["error"] = "Số lượng Slide tối đa chỉ là 4";
+                    }
+                  
 
                 }
                 else
@@ -104,6 +114,33 @@ namespace ProjectBookWeb.Areas.Admin.Controllers
             }
 
         }
+       
         #endregion
+        // Delele Slide
+        [HttpDelete]
+        public IActionResult Delete(int? id)
+        {
+            var slideToBeDeleted = _unitOfWork.Slide.Get(u => u.Id == id);
+            if (slideToBeDeleted == null)
+            {
+                return Json(new { success = false, message = "Error while deleting" });
+            }
+
+            var oldImagePath =
+                           Path.Combine(_webHostEnvironment.WebRootPath,
+                           slideToBeDeleted.LinkImage.TrimStart('\\'));
+
+            if (System.IO.File.Exists(oldImagePath))
+            {
+                System.IO.File.Delete(oldImagePath);
+            }
+
+            _unitOfWork.Slide.Delete(slideToBeDeleted);
+            _unitOfWork.Save();
+
+            return Json(new { success = true, message = "Xóa slide thành công" });
+        }
+
+
     }
 }
